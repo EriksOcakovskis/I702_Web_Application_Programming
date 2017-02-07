@@ -1,7 +1,7 @@
 <a href="index.php">Back to product listing</a>
 
 <?php
-  $conn = $_SESSION["conn"]
+  $conn = $_SESSION["conn"];
   $statement = $conn->prepare(
     "SELECT `name`, `description`, `price` FROM" .
     " `erik_shop_product` WHERE `id` = ?");

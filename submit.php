@@ -1,11 +1,11 @@
 <?php
-  $conn = $_SESSION["conn"]
+  $conn = $_SESSION["conn"];
   $sql = $conn->prepare(
     "INSERT INTO erik_shop_product (
       name,
       price,
       description)
-     VALUES (?,?,?)")
+     VALUES (?,?,?)");
   $sql->bind_param(
     $_POST["name"],
     $_POST["price"],

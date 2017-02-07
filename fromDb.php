@@ -1,6 +1,6 @@
 <ul>
   <?php
-    $conn = $_SESSION["conn"]
+    $conn = $_SESSION["conn"];
     $results = $conn->query(
       "SELECT id,name,price FROM erik_shop_product;");
     $rows = $results->fetch_all(MYSQLI_ASSOC); // Pull ALL results
