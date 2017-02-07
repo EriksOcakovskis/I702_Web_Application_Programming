@@ -25,7 +25,7 @@
       Name:<br>
       <input type="text" name="name"><br>
       Price:<br>
-      <input type="number" name="price"><br>
+      <input type="text" name="price"><br>
       Description:<br>
       <input type="textarea" name="description"><br>
       <br>

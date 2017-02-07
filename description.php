@@ -1,7 +1,12 @@
 <a href="index.php">Back to product listing</a>
 
 <?php
-  $conn = $_SESSION["conn"];
+  require_once "config.php";
+  $conn = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+  if ($conn->connect_error)
+    die("Connection to database failed:" .
+      $conn->connect_error);
+  $conn->query("set names utf8");
   $statement = $conn->prepare(
     "SELECT `name`, `description`, `price` FROM" .
     " `erik_shop_product` WHERE `id` = ?");
@@ -18,3 +23,10 @@
 <p>
   <?=$row["description"];?>
 </p>
+
+<br>
+<br>
+<form method="post" action="cart.php">
+  <input type="hidden" name="id" value="<?=$_GET["id"];?>"/>
+  <input type="submit" value="Add to cart"/>
+</form>
